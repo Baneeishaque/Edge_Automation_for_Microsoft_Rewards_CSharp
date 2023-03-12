@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="accounts.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="bing urls.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
