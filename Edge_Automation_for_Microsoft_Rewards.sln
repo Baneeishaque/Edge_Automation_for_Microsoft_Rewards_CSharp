@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edge_Automation_for_Microsoft_Rewards", "Edge_Automation_for_Microsoft_Rewards\Edge_Automation_for_Microsoft_Rewards.csproj", "{6BABBD0A-6994-4D7D-B0DE-520D1C9D64DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BABBD0A-6994-4D7D-B0DE-520D1C9D64DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BABBD0A-6994-4D7D-B0DE-520D1C9D64DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BABBD0A-6994-4D7D-B0DE-520D1C9D64DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BABBD0A-6994-4D7D-B0DE-520D1C9D64DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {433E5172-BACF-4D50-A460-2D45E21590F8}
+	EndGlobalSection
+EndGlobal
