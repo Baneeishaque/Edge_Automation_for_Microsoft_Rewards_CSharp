@@ -1,50 +1,50 @@
-﻿using OpenQA.Selenium;
+﻿//using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 
 var driver = new EdgeDriver();
 
-Dictionary<string, string> users = new();
+//Dictionary<string, string> users = new();
 
 try {
 
-    using (StreamReader reader = new("accounts.csv")) {
+    //using (StreamReader reader = new("accounts.csv")) {
 
-        while (!reader.EndOfStream) {
+    //    while (!reader.EndOfStream) {
 
-            string line = reader.ReadLine();
-            string[] values = line.Split(',');
+    //        string line = reader.ReadLine();
+    //        string[] values = line.Split(',');
 
-            users.Add(values[0], values[1]);
-        }
-    }
+    //        users.Add(values[0], values[1]);
+    //    }
+    //}
 
     showUser(driver);
     browseUrls(driver);
 
-    foreach (var user in users) {
+    //foreach (var user in users) {
 
-        handleUser(driver,
-               user.Key,
-               user.Value);
-    }
+    //    handleUser(driver,
+    //           user.Key,
+    //           user.Value);
+    //}
 }
 finally {
 
-    //driver.Quit();
+    driver.Quit();
 }
 
 static void browseUrls(EdgeDriver driver) {
 
-    var i = 0;
+    //var i = 0;
     foreach (var line in File.ReadLines(path: "bing urls.txt")) {
 
-        if (i==5) {
-            break;
-        }
+        //if (i==5) {
+        //    break;
+        //}
 
         browseUrl(driver, line);
 
-        i++;
+        //i++;
     }
 }
 
@@ -60,44 +60,49 @@ static void showUser(EdgeDriver driver) {
     }
 }
 
-static void handleUser(EdgeDriver driver, string userName, string passWord) {
+//static void handleUser(EdgeDriver driver, string userName, string passWord) {
 
-    showUser(driver);
-    driver.FindElement(By.CssSelector("img[alt='BK']")).Click();
+//    showUser(driver);
 
-    Thread.Sleep(3500);
-    driver.FindElement(By.LinkText("Sign out")).Click();
+//    driver.FindElement(By.CssSelector("img[alt='BK']")).Click();
+//    Thread.Sleep(3500);
 
-    driver.Url = "https://login.live.com/";
-    driver.FindElement(By.CssSelector("input[type='email']")).SendKeys(userName);
-    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    driver.FindElement(By.LinkText("Sign out")).Click();
+//    Thread.Sleep(3500);
 
-    Thread.Sleep(4500);
+//    driver.Url = "https://login.live.com/";
+//    Thread.Sleep(3500);
+    
+//    driver.FindElement(By.CssSelector("input[type='email']")).SendKeys(userName);
+//    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    Thread.Sleep(4500);
 
-    //if (driver.FindElement(By.CssSelector("div[role='heading']")).Text!="Enter password") {
+//    //if (driver.FindElement(By.CssSelector("div[role='heading']")).Text!="Enter password") {
 
-    //    driver.FindElement(By.LinkText("Other ways to sign in")).Click();
+//    //    driver.FindElement(By.LinkText("Other ways to sign in")).Click();
 
-    //    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(3000);
-    //    driver.FindElement(By.Id("credentialList")).FindElements(By.ClassName("tile-container"))[1].Click();
-    //    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(3000);
-    //}
+//    //    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(3000);
+//    //    driver.FindElement(By.Id("credentialList")).FindElements(By.ClassName("tile-container"))[1].Click();
+//    //    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(3000);
+//    //}
 
-    driver.FindElement(By.CssSelector("input[type='password']")).SendKeys(passWord);
-    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    driver.FindElement(By.CssSelector("input[type='password']")).SendKeys(passWord);
+//    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    Thread.Sleep(3500);
 
-    driver.FindElement(By.Id("KmsiCheckboxField")).Click();
-    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    driver.FindElement(By.Id("KmsiCheckboxField")).Click();
+//    driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+//    Thread.Sleep(3500);
 
-    showUser(driver);
-    browseUrls(driver);
-}
+//    showUser(driver);
+//    browseUrls(driver);
+//}
 
 static void browseUrl(EdgeDriver driver, string line) {
 
     try {
         driver.Navigate().GoToUrl(line);
-        Thread.Sleep(2000);
+        Thread.Sleep(2500);
     }
     catch (Exception) {
 
